@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eafbff;
+    background-image: linear-gradient(to bottom,
+     #ee5f00 0%,
+     #ee5f00 50%,
+     rgb(17, 129, 114) 50%,
+     rgb(17, 129, 114) 100%);
+}
+nav  {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: width 0.6s linear;
+    ul {
+        list-style-type: none;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        width: 0;
+        transition: width 0.6s linear;
+        li { 
+            a {
+                display: block;
+                text-decoration: none;
+                color: #000;
+                outline: none;
+                opacity: 0;
+                transform: rotateY(0deg);
+                transition: transform 0.6s linear, opacity .6s linear;
+                font-family: 'Open Sans', sans-serif;
+            }
+            
+            
+        }
+    }
+    button {
+        background-color: transparent;
+        outline: none;
+        color: #000;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        padding: 0;
+        height: 30px;
+        width: 30px;
+        right: -5px;
+        z-index: 0;
+        .line {
+            
+            height: .5px;
+            width: 20px;
+            position: absolute;
+            transition: transform 1s ease;
+            &1 {
+                background-color: rgb(17, 129, 114);
+                top: 10px;
+            }
+            &2 {
+                background-color: rgb(17, 129, 114);
+                top: 18px;
+            }
+        }
+       
+    }
+    &.active {
+        width: 270px;
+        ul {
+            width: 100%;
+            padding-left: 10px;
+        }
+            a {
+            transform: rotateY(360deg);
+            opacity: 1;
+            margin-left: 0.4rem;
+            }
+            
+        
+        button {
+            right: 5px;
+            .line {
+                &1 {
+                    transform: rotate(-765deg);
+                    top: 15px;
+                    background-color: #ee5f00;
+                }
+                &2 {
+                    transform: rotate(765deg);
+                    top: 15px;
+                    background-color: #ee5f00;
+                }
+            }
+        }
+    }
+}
